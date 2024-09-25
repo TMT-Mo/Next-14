@@ -1,0 +1,13 @@
+{
+    "HomePage": {
+      "title": "Chao!",
+      "about": "Test ne"
+    },
+    "Metadata": {
+      "title": "Trang Mo Next 14",
+      "description": "Đây là trang test next 14 của Mo"
+    },
+    "NotFound": {
+      "content": "Không tìm thấy trang này!"
+    }
+  }

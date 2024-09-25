@@ -1,0 +1,13 @@
+{
+    "HomePage": {
+      "title": "Hello world!",
+      "about": "Go to the about page"
+    },
+    "Metadata": {
+      "title": "Mo Next 14 page",
+      "description": "This is Mo's Next 14 page"
+    },
+    "NotFound": {
+      "content": "This page can't be found!"
+    }
+  }

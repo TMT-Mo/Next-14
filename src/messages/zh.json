@@ -1,0 +1,13 @@
+{
+    "HomePage": {
+      "title": "你好!",
+      "about": "Test ne"
+    },
+    "Metadata": {
+      "title": "Mo 下 14",
+      "description": "這是 Mo 的下一個 14 測試頁"
+    },
+    "NotFound": {
+      "content": "找不到該頁面!"
+    }
+  }
