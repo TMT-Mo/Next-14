@@ -1,4 +1,3 @@
-import { useTranslations } from 'next-intl'
 import React from 'react'
 import { CustomCarousel } from './CustomCarousel'
 import { CarbonCredit } from './CarbonCredit'
