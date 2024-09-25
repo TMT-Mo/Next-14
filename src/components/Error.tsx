@@ -7,7 +7,7 @@ export default function Error({ error, reset }: {
     reset: () => void;
 }) {
     const t = useTranslations('Error');
-
+    console.log('error', error)
     return (
         <div>
             <h1>{t('title')}</h1>

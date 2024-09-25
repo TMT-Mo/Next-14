@@ -1,8 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
 import logo from '@/assets/bcg_logo.png'
-import Link from 'next/link'
-import { getLocale } from 'next-intl/server'
 import { LocaleAvailable } from '@/i18n/routing'
 import { NavLink } from './NavLink'
 

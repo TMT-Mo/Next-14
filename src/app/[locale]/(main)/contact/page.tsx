@@ -1,5 +1,4 @@
 import { BannerPage } from '@/components/BannerPage'
-import { useTranslations } from 'next-intl'
 import React from 'react'
 import Banner from '@/assets/contact_carousel.png'
 export default function ContactPage() {

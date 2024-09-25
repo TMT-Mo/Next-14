@@ -2,9 +2,6 @@ import { useTranslations } from 'next-intl'
 import React from 'react'
 import { CustomCarousel } from './CustomCarousel'
 import { CarbonCredit } from './CarbonCredit'
-import GreenContainer from '@/assets/green_gradient_container.png'
-import Image from 'next/image'
-import { Col, Row } from 'antd'
 import { CarbonProject } from './CarbonProject'
 import { getTranslations } from 'next-intl/server'
 
@@ -22,7 +19,6 @@ export async function generateMetadata({
 }
 
 const HomePage = () => {
-    const t = useTranslations("HomePage")
     return (
         <main>
             <section>

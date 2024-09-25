@@ -1,22 +1,11 @@
 'use client'
 import { Carousel } from 'antd'
 import React from 'react'
-import style from './style.module.scss'
 import styled from 'styled-components';
 import homeBanner from '@/assets/carousel_home.jpg'
-import aboutBanner from '@/assets/about_carousel.png'
-import contactBanner from '@/assets/contact_carousel.png'
 import Image from 'next/image';
 import CustomButton from '@/components/CustomButton';
 import DoubleArrow from '@/icons/DoubleArrow.svg?icon'
-const contentStyle: React.CSSProperties = {
-  margin: 0,
-  height: '160px',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
-};
 
 const StyledCarousel = styled(Carousel)`
     .slick-dots, .slick-dots li {

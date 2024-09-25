@@ -1,4 +1,3 @@
-import localFont from "next/font/local";
 import { Albert_Sans, Noto_Sans } from "next/font/google";
 
 export const albertSans = Albert_Sans({

@@ -4,11 +4,6 @@ declare module "*.svg" {
   export default content;
 }
 
-declare module "*.svg?url" {
-  const content: any;
-  export default content;
-}
-
 declare module "*.svg?icon" {
   const component: React.FC<React.SVGProps<SVGSVGElement>>;
   export default component;
