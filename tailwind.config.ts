@@ -13,6 +13,7 @@ const config: Config = {
         // foreground: "var(--foreground)",
         primary: "#9DD05C",
         secondary: "#6DBB4A",
+        "heavy-green": "#224415",
       },
       fontFamily: {
         sans: ["var(--font-albertSans)"],

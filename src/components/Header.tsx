@@ -3,7 +3,9 @@ import Image from 'next/image'
 import logo from '@/assets/bcg_logo.png'
 import { LocaleAvailable } from '@/i18n/routing'
 import { NavLink } from './NavLink'
-
+import { SelectLanguage } from './SelectLanguage'
+import { useTranslations } from 'next-intl'
+import HamburgerIcon from "@/icons/hamburger.svg"
 interface IMenu {
     url: string,
     name: string
@@ -16,41 +18,44 @@ interface IProps {
 const menuList: IMenu[] = [
     {
         url: '/home',
-        name: 'Home'
+        name: 'home'
     },
     {
         url: '/science',
-        name: 'Science'
+        name: 'science'
     },
     {
         url: '/resources',
-        name: 'Resources'
+        name: 'resources'
     },
     {
         url: '/about',
-        name: 'About Us'
+        name: 'about'
     },
     {
         url: '/contact',
-        name: 'Contact Us'
+        name: 'contact'
     },
 ]
 
 const Header = ({ locale }: IProps) => {
-    // const locale = getLocale()
+    const t = useTranslations("Header")
+
     return (
-        <header className='sticky bg-black px-60 py-2 w-full'>
-            <div className='flex w-full justify-between items-center'>
-                <Image src={logo} alt='' width={138.46} height={87.19} />
-                <div className='flex gap-14'>
+        <header className='sticky bg-black  py-2 w-full px-0 lg:px-60'>
+            <div className='flex w-screen justify-between items-center px-4'>
+                <Image src={logo} alt='' className='!w-28 h-16' />
+                <Image src={HamburgerIcon} alt='' className='!w-9 h-9' />
+                {/* <div className='hidden gap-14 md:flex'>
                     {menuList.map(({ name, url }) =>
                         <NavLink href={`/${locale}${url}`} key={name} locale={locale}>
                             <span className='font-medium text-[17px] text-white'>
-                                {name}
+                                {t(`${name}`)}
                             </span>
                         </NavLink>
                     )}
-                </div>
+                    <SelectLanguage />
+                </div> */}
             </div>
         </header>
     )

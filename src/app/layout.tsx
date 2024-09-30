@@ -1,8 +1,9 @@
-
+export const dynamic = "force-dynamic";
+import { CookiesProvider } from "next-client-cookies/server";
 export default function RootLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
-    return children;
+    return <CookiesProvider>{children}</CookiesProvider>;
 }

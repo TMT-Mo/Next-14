@@ -1,7 +1,21 @@
 {
     "HomePage": {
-      "title": "你好!",
-      "about": "Test ne"
+      "chinese": "中文",
+      "english": "English",
+      "vietnamese": "Tiếng Việt"
+    },
+    "Header": {
+      "home": "首頁",
+      "science": "科學",
+      "resources": "資源",
+      "contact": "聯絡我們",
+      "about": "關於我們"
+    },
+    "LanguageSelection": {
+      "chinese": "中文",
+      "english": "English",
+      "vietnamese": "Tiếng Việt",
+      "next": "下一個"
     },
     "Metadata": {
       "title": "Mo 下 14",
@@ -9,5 +23,8 @@
     },
     "NotFound": {
       "content": "找不到該頁面!"
+    },
+    "Error": {
+      "content": "Something went wrong! We will check it immediately!"
     }
   }

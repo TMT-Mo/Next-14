@@ -1,8 +1,10 @@
 import React from 'react'
-import { CustomCarousel } from './CustomCarousel'
+import { Banner } from './Banner'
 import { CarbonCredit } from './CarbonCredit'
 import { CarbonProject } from './CarbonProject'
 import { getTranslations } from 'next-intl/server'
+import { GenerationFlow } from './GenerationFlow'
+import { VietNamData } from './VietNamData'
 
 export async function generateMetadata({
     params: { locale },
@@ -21,15 +23,21 @@ const HomePage = () => {
     return (
         <main>
             <section>
-                <CustomCarousel />
+                <Banner />
                 <div className='h-[13px] bg-secondary' ></div>
             </section>
-            <section className='py-[120px]'>
+            {/* <section className='py-[120px]'>
                 <CarbonCredit />
             </section>
             <section className='py-[120px]'>
                 <CarbonProject />
             </section>
+            <section className='py-[120px]'>
+                <GenerationFlow />
+            </section>
+            <section className='pt-[120px]'>
+                <VietNamData />
+            </section> */}
         </main>
     )
 }

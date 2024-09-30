@@ -8,9 +8,9 @@ import CustomButton from './CustomButton'
 import CustomInput from './CustomInput'
 const Footer = () => {
     return (
-        <footer className='bg-[#224415]  '>
+        <footer className='bg-[#224415] '>
             <div className='container mx-auto py-28 px-24'>
-                <div className='flex gap-[143px]'>
+                <div className='gap-12 flex flex-col lg:gap-[143px] lg:flex-row'>
                     <div className='flex flex-col gap-[32px] text-white'>
                         <Image alt='' src={bcgLogo} width={193.7} height={121.97} quality={100} />
                         <span className='max-w-[332.38px]'>Proactively restore timely alignments
@@ -56,9 +56,9 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='flex flex-col gap-[30px] pt-[30px] translate-x-[200px]'>
+                    <div className='flex flex-col gap-[30px] pt-[30px] lg:translate-x-[200px]'>
                         <span className='text-2xl font-medium text-white'>Stay Connected</span>
-                        <CustomInput className='border-white px-8 py-5 bg-transparent text-white !border-[rgba(255,255,255,0.2)] w-[451.5px] placeholder:text-white' placeholder='Enter Your E-Mail...' />
+                        <CustomInput className='w-full border-white px-8 py-5 bg-transparent text-white !border-[rgba(255,255,255,0.2)]  placeholder:text-white focus:bg-transparent focus:border-white hover:bg-transparent lg:w-[451.5px]' placeholder='Enter Your E-Mail...' />
                         <CustomButton className='uppercase w-full font-semibold text-[16px]'>Subscribe</CustomButton>
                     </div>
                 </div>

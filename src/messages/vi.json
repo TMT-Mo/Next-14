@@ -1,7 +1,21 @@
 {
     "HomePage": {
-      "title": "Chao!",
-      "about": "Test ne"
+      "chinese": "中文",
+      "english": "English",
+      "vietnamese": "Tiếng Việt"
+    },
+    "Header": {
+      "home": "Trang chủ",
+      "science": "Khoa học",
+      "resources": "Nguồn",
+      "contact": "Liên hệ",
+      "about": "Về chúng tôi"
+    },
+    "LanguageSelection": {
+      "chinese": "中文",
+      "english": "English",
+      "vietnamese": "Tiếng Việt",
+      "next": "Tiếp tục"
     },
     "Metadata": {
       "title": "Trang Mo Next 14",
@@ -9,5 +23,8 @@
     },
     "NotFound": {
       "content": "Không tìm thấy trang này!"
+    },
+    "Error": {
+      "content": "Đã có lỗi xảy ra! Chúng tôi sẽ kiểm tra sớm nhất có thể!"
     }
   }

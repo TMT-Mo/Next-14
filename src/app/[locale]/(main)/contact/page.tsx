@@ -1,6 +1,7 @@
 import { BannerPage } from '@/components/BannerPage'
 import React from 'react'
 import Banner from '@/assets/contact_carousel.png'
+import { ContactForm } from './ContactForm'
 export default function ContactPage() {
   return (
     <main>
@@ -12,6 +13,9 @@ export default function ContactPage() {
           </div>
         </BannerPage>
 
+      </section>
+      <section className='py-[120px]'>
+        <ContactForm />
       </section>
     </main>
   )

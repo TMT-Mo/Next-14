@@ -47,8 +47,8 @@ export const CarbonCredit = () => {
     return (
         <>
             <Row className='pb-20'>
-                <Col span={4}></Col>
-                <Col span={16}>
+                <Col span={2}></Col>
+                <Col span={20}>
                     <div >
                         <div className='flex w-full items-center gap-[104px] justify-center'>
                             <Image src={CO2} width={609.37} height={787.03} alt='' />
@@ -67,7 +67,7 @@ export const CarbonCredit = () => {
                         </div>
                         {/* <Image alt='' src={GreenContainer} className='ml-32 absolute' /> */}
                     </div></Col>
-                <Col span={4}></Col>
+                <Col span={2}></Col>
             </Row>
             <Row >
                 <Col span={4}></Col>

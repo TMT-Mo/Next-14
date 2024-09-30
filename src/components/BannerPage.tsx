@@ -8,8 +8,7 @@ interface IProps {
 export const BannerPage = ({ src, children }: IProps) => {
     return (
         <div className='relative'>
-            <Image alt='' src={src}
-            />
+            <Image alt='' src={src} />
             <div className='absolute top-1/2  transform -translate-x-1/2 -translate-y-2/3 left-1/2'>
                 {children}
             </div>

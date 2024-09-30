@@ -1,7 +1,21 @@
 {
     "HomePage": {
-      "title": "Hello world!",
-      "about": "Go to the about page"
+      "chinese": "中文",
+      "english": "English",
+      "vietnamese": "Tiếng Việt"
+    },
+    "Header": {
+      "home": "Home",
+      "science": "Science",
+      "resources": "Resources",
+      "contact": "Contact Us",
+      "about": "About Us"
+    },
+    "LanguageSelection": {
+      "chinese": "中文",
+      "english": "English",
+      "vietnamese": "Tiếng Việt",
+      "next": "Next"
     },
     "Metadata": {
       "title": "Mo Next 14 page",
@@ -9,5 +23,8 @@
     },
     "NotFound": {
       "content": "This page can't be found!"
+    },
+    "Error": {
+      "content": "Something went wrong! We will check it immediately!"
     }
   }

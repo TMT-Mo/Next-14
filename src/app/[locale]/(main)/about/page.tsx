@@ -1,11 +1,12 @@
 import { BannerPage } from '@/components/BannerPage'
 import React from 'react'
 import Banner from '@/assets/about_carousel.png'
+import { CarbonImpact } from './CarbonImpact'
 
 export default function AboutPage() {
   return (
     <main>
-      <section>
+      <section >
         <BannerPage src={Banner}>
           <div className='flex flex-col items-center text-white text-center gap-10'>
             <span className='uppercase text-[21px]'>about us</span>
@@ -14,6 +15,9 @@ export default function AboutPage() {
           </div>
         </BannerPage>
 
+      </section>
+      <section className='pt-[120px]'>
+        <CarbonImpact />
       </section>
     </main>
   )
