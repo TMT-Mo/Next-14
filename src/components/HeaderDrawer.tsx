@@ -7,12 +7,14 @@ import { SelectLanguage } from './SelectLanguage';
 import Link from 'next/link';
 import { urls } from '@/util/urls';
 import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from 'next-intl';
 
 
 export const HeaderDrawer = () => {
-    const { about, contact, home, resources, science } = urls
     const { currentLocale } = useLanguage()
+    const t = useTranslations('Header')
     const [isOpenDrawer, setIsOpenDrawer] = useState(false);
+    const { about, contact, home, resources, science } = urls
 
     const openDrawer = () => {
         setIsOpenDrawer(true);
@@ -30,11 +32,11 @@ export const HeaderDrawer = () => {
                         <Image src={CloseIcon} alt='' className='!w-9 h-9' onClick={closeDrawer} />
                     </div>
                     <div className='flex flex-col gap-10 pl-10'>
-                        <Link href={`/${currentLocale}${home}`} onClick={closeDrawer}><span className='text-[22px]'>Home</span></Link>
-                        <Link href={`/${currentLocale}${science}`} onClick={closeDrawer}><span className='text-[22px]'>Science</span></Link>
-                        <Link href={`/${currentLocale}${resources}`} onClick={closeDrawer}><span className='text-[22px]'>Resources</span></Link>
-                        <Link href={`/${currentLocale}${about}`} onClick={closeDrawer}><span className='text-[22px]'>About Us</span></Link>
-                        <Link href={`/${currentLocale}${contact}`} onClick={closeDrawer}><span className='text-[22px]'>Contact Us</span></Link>
+                        <Link href={`/${currentLocale}${home}`} onClick={closeDrawer}><span className='text-[22px]'>{t('home')}</span></Link>
+                        <Link href={`/${currentLocale}${science}`} onClick={closeDrawer}><span className='text-[22px]'>{t('science')}</span></Link>
+                        <Link href={`/${currentLocale}${resources}`} onClick={closeDrawer}><span className='text-[22px]'>{t('resources')}</span></Link>
+                        <Link href={`/${currentLocale}${about}`} onClick={closeDrawer}><span className='text-[22px]'>{t('about')}</span></Link>
+                        <Link href={`/${currentLocale}${contact}`} onClick={closeDrawer}><span className='text-[22px]'>{t('contact')}</span></Link>
                     </div>
 
                 </div>

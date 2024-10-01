@@ -47,7 +47,7 @@ const Header = ({ locale }: IProps) => {
             <div className='flex w-screen justify-between items-center px-4 xl:px-56'>
                 <Image src={logo} alt='' className='!w-28 h-16' />
                 <HeaderDrawer />
-                <div className='hidden gap-14 md:flex'>
+                <div className='hidden gap-14 lg:flex'>
                     {menuList.map(({ name, url }) =>
                         <NavLink href={`/${locale}${url}`} key={name} locale={locale}>
                             <span className='font-medium text-[17px] text-white'>

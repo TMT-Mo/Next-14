@@ -86,8 +86,8 @@ export const CarbonCredit = () => {
                 <Col span={20}>
                     <GreenDivDesktop className='py-12 pl-28'>
                         <div className='flex gap-10'>
-                            <span className='text-white font-semibold text-2xl max-w-52'>Types of projects that generate carbon credits</span>
-                            <div className='flex gap-32'>
+                            <span className='text-white font-semibold text-2xl  xl:max-w-52'>Types of projects that generate carbon credits</span>
+                            <div className='flex gap-10 2xl:gap-32'>
                                 {projectList.map(({ image, name }) =>
                                     <div key={name} className='flex flex-col items-center mt-6 gap-2 text-center text-white'>
                                         <Image alt='' src={image} />
