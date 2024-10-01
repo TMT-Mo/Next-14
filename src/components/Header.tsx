@@ -6,8 +6,7 @@ import { LocaleAvailable } from '@/i18n/routing'
 import { NavLink } from './NavLink'
 import { SelectLanguage } from './SelectLanguage'
 import { useTranslations } from 'next-intl'
-import HamburgerIcon from "@/icons/hamburger.svg"
-import useDeviceDetection from '@/hooks/useDeviceDetection'
+import { HeaderDrawer } from './HeaderDrawer'
 interface IMenu {
     url: string,
     name: string
@@ -42,14 +41,13 @@ const menuList: IMenu[] = [
 
 const Header = ({ locale }: IProps) => {
     const t = useTranslations("Header")
-    const { isMobile } = useDeviceDetection()
 
     return (
         <header className='sticky bg-black py-2 w-full overflow-hidden'>
             <div className='flex w-screen justify-between items-center px-4 xl:px-56'>
                 <Image src={logo} alt='' className='!w-28 h-16' />
-                {isMobile && <Image src={HamburgerIcon} alt='' className='!w-9 h-9' />}
-                {!isMobile && <div className='hidden gap-14 md:flex'>
+                <HeaderDrawer />
+                <div className='hidden gap-14 md:flex'>
                     {menuList.map(({ name, url }) =>
                         <NavLink href={`/${locale}${url}`} key={name} locale={locale}>
                             <span className='font-medium text-[17px] text-white'>
@@ -58,7 +56,7 @@ const Header = ({ locale }: IProps) => {
                         </NavLink>
                     )}
                     <SelectLanguage />
-                </div>}
+                </div>
             </div>
         </header>
     )

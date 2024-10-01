@@ -81,7 +81,7 @@ export const CarbonProject = () => {
                 <Image src={FieldImage} alt='' style={{
                     height: isMobile ? 636 : '100%'
                 }} objectFit='cover' />
-                <Image src={isMobile ? DotBackgroundMobile : DotBackground} alt='' className='absolute top-8' />
+                <Image src={isMobile ? DotBackgroundMobile : DotBackground} alt='' className='absolute top-8 w-full' />
                 {/* <Image src={DotBackground} alt='' className='absolute top-5' /> */}
                 <div className='absolute  transform -translate-x-1/2  left-1/2 w-full top-36 md:-top-20'>
                     {!isMobile && <div className='flex gap-5 w-fit mx-auto'>

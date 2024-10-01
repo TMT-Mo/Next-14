@@ -56,7 +56,6 @@ background: linear-gradient(90deg, rgba(109,187,74,1) 0%, rgba(34,68,21,1) 70%);
 
 export const CarbonCredit = () => {
     const { isMobile } = useDeviceDetection()
-    console.log('isMobile', isMobile)
     return (
         <>
             <Row className='pb-20'>
@@ -82,12 +81,12 @@ export const CarbonCredit = () => {
                     </div></Col>
                 <Col span={2}></Col>
             </Row>
-            {!isMobile && <Row >
+            <Row className='hidden xl:flex'>
                 <Col span={4}></Col>
                 <Col span={20}>
                     <GreenDivDesktop className='py-12 pl-28'>
                         <div className='flex gap-10'>
-                            <span className='text-white font-semibold text-2xl'>Types of projects that generate carbon credits</span>
+                            <span className='text-white font-semibold text-2xl max-w-52'>Types of projects that generate carbon credits</span>
                             <div className='flex gap-32'>
                                 {projectList.map(({ image, name }) =>
                                     <div key={name} className='flex flex-col items-center mt-6 gap-2 text-center text-white'>
@@ -98,8 +97,8 @@ export const CarbonCredit = () => {
                         </div>
                     </GreenDivDesktop>
                 </Col>
-            </Row>}
-            {isMobile && <GreenDivMobile className=''>
+            </Row>
+            <GreenDivMobile className='block xl:hidden'>
                 <div className='flex flex-col px-[78px] py-[50px]'>
                     <span className='text-white font-semibold text-xl'>Types of projects that generate carbon credits</span>
                     <div className='flex  flex-col gap-11 font-semibold text-[18px] pt-8 max-w-[234px]'>
@@ -109,7 +108,7 @@ export const CarbonCredit = () => {
                         </div>)}
                     </div>
                 </div>
-            </GreenDivMobile>}
+            </GreenDivMobile>
         </>
 
     )

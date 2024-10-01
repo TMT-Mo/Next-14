@@ -35,7 +35,7 @@ const HomePage = () => {
             <section className='py-8 lg:py-32'>
                 <GenerationFlow />
             </section>
-            <section className='py-8 lg:py-32'>
+            <section className='pt-8 lg:pt-32'>
                 <VietNamData />
             </section>
 

@@ -14,6 +14,10 @@ interface IFlag {
     flag: React.ReactNode
 }
 
+interface IProps {
+    downArrowColor?: string
+}
+
 const flag: IFlag[] = [
     {
         flag: <Image alt='vi image' src={VietnameseFlag} style={{ width: 47, height: 24 }} />,
@@ -32,7 +36,7 @@ const flag: IFlag[] = [
 
 
 
-export const SelectLanguage = () => {
+export const SelectLanguage = ({ downArrowColor = 'white' }: IProps) => {
     const { onSelectLanguage, currentLocale } = useLanguage()
 
 
@@ -63,7 +67,7 @@ export const SelectLanguage = () => {
             <Dropdown menu={menuProps} trigger={['click']} arrow>
                 <Space className='cursor-pointer'>
                     {flag.find(item => item.locale == currentLocale)?.flag}
-                    <TiArrowSortedDown color='white' />
+                    <TiArrowSortedDown color={downArrowColor} />
                 </Space>
             </Dropdown>
         </>
