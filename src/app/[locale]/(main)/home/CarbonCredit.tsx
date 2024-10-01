@@ -1,14 +1,16 @@
+'use client'
 import Image, { StaticImageData } from 'next/image'
 import React from 'react'
 import CO2 from '@/assets/tree_co2.png'
 import { LeafTitle } from '@/components/LeafTitle'
-import GreenContainer from '@/assets/green_gradient_container.png'
 import { Row, Col } from 'antd'
 import TreeIcon from '@/assets/tree.png'
 import CO2Icon from '@/assets/co2.png'
 import LeafTree from '@/assets/leaf_tree.png'
 import EnergyIcon from '@/assets/energy.png'
 import CookStoveIcon from '@/assets/cookstove.png'
+import useDeviceDetection from '@/hooks/useDeviceDetection'
+import styled from 'styled-components'
 
 interface IProject {
     name: string,
@@ -43,18 +45,29 @@ const projectList: IProject[] = [
     },
 ]
 
+const GreenDivMobile = styled.div`
+    background: rgb(109,187,74);
+    background: linear-gradient(0deg, rgba(109,187,74,1) 0%, rgba(34,68,21,1) 52%);
+`
+const GreenDivDesktop = styled.div`
+    background: rgb(109,187,74);
+background: linear-gradient(90deg, rgba(109,187,74,1) 0%, rgba(34,68,21,1) 70%);
+`
+
 export const CarbonCredit = () => {
+    const { isMobile } = useDeviceDetection()
+    console.log('isMobile', isMobile)
     return (
         <>
             <Row className='pb-20'>
                 <Col span={2}></Col>
                 <Col span={20}>
                     <div >
-                        <div className='flex w-full items-center gap-[104px] justify-center'>
+                        <div className='flex flex-col w-full items-center gap-[104px] justify-center lg:flex-row'>
                             <Image src={CO2} width={609.37} height={787.03} alt='' />
                             <div className='flex flex-col gap-8'>
                                 <LeafTitle>What are Carbon Credits?</LeafTitle>
-                                <p className='max-w-[550px] text-[#868681] '>
+                                <p className='max-w-[550px] text-[#868681] text-[15px] lg:text-base'>
                                     Carbon credits represent measurable, verifiable reductions in emissions achieved through certified climate action projects. <br /> <br />
 
                                     These initiatives not only cut, avoid, or capture greenhouse gas (GHG) emissions but also deliver a range of additional benefits, such as empowering communities, preserving ecosystems, restoring forests, and reducing fossil fuel dependence. <br /><br />
@@ -69,23 +82,34 @@ export const CarbonCredit = () => {
                     </div></Col>
                 <Col span={2}></Col>
             </Row>
-            <Row >
+            {!isMobile && <Row >
                 <Col span={4}></Col>
                 <Col span={20}>
-                    <div className='relative'>
-                        <Image alt='' src={GreenContainer} />
-                        <div className='absolute flex gap-10 items-center top-1/2  transform  -translate-y-1/2 left-[118px]'>
-                            <span className='text-white font-semibold text-[25px]'>Types of projects <br />that generate <br /> carbon credits</span>
-                            <div className='flex gap-[135px] font-semibold text-[18px] pt-8'>
-                                {projectList.map(({ image, name }) => <div key={name} className='flex flex-col items-center gap-2 text-center text-white'>
-                                    <Image alt='' src={image} />
-                                    <span className='w-[80px]'>{name}</span>
-                                </div>)}
+                    <GreenDivDesktop className='py-12 pl-28'>
+                        <div className='flex gap-10'>
+                            <span className='text-white font-semibold text-2xl'>Types of projects that generate carbon credits</span>
+                            <div className='flex gap-32'>
+                                {projectList.map(({ image, name }) =>
+                                    <div key={name} className='flex flex-col items-center mt-6 gap-2 text-center text-white'>
+                                        <Image alt='' src={image} />
+                                        <span className='w-[80px]'>{name}</span>
+                                    </div>)}
                             </div>
                         </div>
-                    </div>
+                    </GreenDivDesktop>
                 </Col>
-            </Row>
+            </Row>}
+            {isMobile && <GreenDivMobile className=''>
+                <div className='flex flex-col px-[78px] py-[50px]'>
+                    <span className='text-white font-semibold text-xl'>Types of projects that generate carbon credits</span>
+                    <div className='flex  flex-col gap-11 font-semibold text-[18px] pt-8 max-w-[234px]'>
+                        {projectList.map(({ image, name }) => <div key={name} className='flex w-full justify-between items-center gap-10 text-center text-white'>
+                            <Image alt='' src={image} style={{ width: isMobile ? 30 : '100%', height: 'auto' }} />
+                            <span className='w-[171px] text-start'>{name}</span>
+                        </div>)}
+                    </div>
+                </div>
+            </GreenDivMobile>}
         </>
 
     )

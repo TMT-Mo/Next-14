@@ -1,6 +1,6 @@
 'use client'
 import { useTranslations } from 'next-intl';
-import { Link, LocaleAvailable, usePathname, useRouter } from '@/i18n/routing';
+import { Link, LocaleAvailable } from '@/i18n/routing';
 import BgImage from '@/assets/language_selection_bg.png'
 import Image, { StaticImageData } from 'next/image';
 import Logo from '@/assets/bcg_logo.png'

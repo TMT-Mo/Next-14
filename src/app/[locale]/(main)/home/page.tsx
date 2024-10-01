@@ -26,18 +26,19 @@ const HomePage = () => {
                 <Banner />
                 <div className='h-[13px] bg-secondary' ></div>
             </section>
-            {/* <section className='py-[120px]'>
+            <section className='py-8 lg:py-32'>
                 <CarbonCredit />
             </section>
-            <section className='py-[120px]'>
+            <section className='py-8 lg:py-32'>
                 <CarbonProject />
             </section>
-            <section className='py-[120px]'>
+            <section className='py-8 lg:py-32'>
                 <GenerationFlow />
             </section>
-            <section className='pt-[120px]'>
+            <section className='py-8 lg:py-32'>
                 <VietNamData />
-            </section> */}
+            </section>
+
         </main>
     )
 }
