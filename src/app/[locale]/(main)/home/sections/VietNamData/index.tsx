@@ -5,8 +5,7 @@ import VietNamDataBg from "./images/dataBg.png";
 import DataDotBg from "./images/DataDotBg.png";
 import { Flex } from "antd";
 // import styled from 'styled-components'
-import Data1 from "./images/data1.png";
-import { IVietNamData } from "../../types";
+
 import Logo from "@/assets/bcg_logo.png";
 import { GoArrowRight } from "react-icons/go";
 import { LeafTitle } from "@/components/LeafTitle";
@@ -25,32 +24,14 @@ import "react-multi-carousel/lib/styles.css";
 import useDeviceDetection from "@/hooks/useDeviceDetection";
 import DotBgMobile from "./images/Dot_bg_mobile.png";
 import { CustomArrow } from "./CustomArrow";
-const vietnamDataList: IVietNamData[] = [
-    {
-        image: Data1,
-        title:
-            "Carbon credit exchange a strategic factor for Vietnams economic development",
-        brief:
-            "Vu Trung Kien, director of the Centre for Climate Change Response Support, speaks to Nhan Dan (People) newspaper about...",
-    },
-    {
-        image: Data1,
-        title:
-            "Carbon credit exchange a strategic factor for Vietnams economic development",
-        brief:
-            "Vu Trung Kien, director of the Centre for Climate Change Response Support, speaks to Nhan Dan (People) newspaper about...",
-    },
-    {
-        image: Data1,
-        title:
-            "Carbon credit exchange a strategic factor for Vietnams economic development",
-        brief:
-            "Vu Trung Kien, director of the Centre for Climate Change Response Support, speaks to Nhan Dan (People) newspaper about...",
-    },
-];
+import { Link, usePathname } from "@/i18n/routing";
+import { vietnamDataList } from "./data";
+
 export const VietNamData = () => {
     const carouselRef = useRef<Carousel>(null);
     const { isMobile } = useDeviceDetection();
+    const pathName = usePathname()
+
     return (
         <div className="relative">
             <Image
@@ -225,41 +206,43 @@ export const VietNamData = () => {
                             slidesToSlide={1}
                             swipeable
                         >
-                            {vietnamDataList.map(({ brief, image, title }, index) => (
-                                <div className="flex flex-col gap-7 bg-white w-fit" key={index}>
-                                    <Image
-                                        alt="data"
-                                        src={image}
-                                        style={{
-                                            width: "100%",
-                                            height: "auto",
-                                        }}
-                                    />
-                                    <div className="flex flex-col gap-4 px-8">
-                                        <span className="w-full font-semibold text-[17px]  leading-snug lg:text-[24px] lg:w-96">
-                                            {title}
-                                        </span>
-                                        <span className="w-full text-[#868681] text-[14px] lg:text-[16px] lg:w-96">
-                                            {brief}
-                                        </span>
-                                    </div>
-                                    <div className="flex justify-between px-10 border-t-[1px] border-t-[#DDDDDD] py-3">
+                            {vietnamDataList.map(({ brief, image, title, id }) => (
+                                <Link href={`${pathName}/blog/${id}`} key={id}>
+                                    <div className="flex flex-col gap-7 bg-white w-fit cursor-pointer" >
                                         <Image
-                                            alt="logo"
-                                            src={Logo}
+                                            alt="data"
+                                            src={image}
                                             style={{
-                                                width: isMobile ? 50 : 80,
-                                                height: isMobile ? 30 : 50,
+                                                width: "100%",
+                                                height: "auto",
                                             }}
                                         />
-                                        <div className="flex gap-3 items-center">
-                                            <span className="text-secondary font-semibold text-[14px] lg:text-base">
-                                                Read More
+                                        <div className="flex flex-col gap-4 px-8">
+                                            <span className="w-full font-semibold text-[17px]  leading-snug lg:text-[24px] lg:w-96">
+                                                {title}
                                             </span>
-                                            <GoArrowRight color="6DBB4A" />
+                                            <span className="w-full text-[#868681] text-[14px] lg:text-[16px] lg:w-96">
+                                                {brief}
+                                            </span>
+                                        </div>
+                                        <div className="flex justify-between px-10 border-t-[1px] border-t-[#DDDDDD] py-3">
+                                            <Image
+                                                alt="logo"
+                                                src={Logo}
+                                                style={{
+                                                    width: isMobile ? 50 : 80,
+                                                    height: isMobile ? 30 : 50,
+                                                }}
+                                            />
+                                            <div className="flex gap-3 items-center">
+                                                <span className="text-secondary font-semibold text-[14px] lg:text-base">
+                                                    Read More
+                                                </span>
+                                                <GoArrowRight color="6DBB4A" />
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
                             ))}
                         </Carousel>
                         {isMobile && (

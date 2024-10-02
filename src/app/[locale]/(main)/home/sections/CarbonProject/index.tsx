@@ -15,8 +15,8 @@ import styles from '../../style.module.scss'
 import styled from 'styled-components'
 import { CarouselRef } from 'antd/es/carousel'
 import useDeviceDetection from '@/hooks/useDeviceDetection'
-import { CarouselNextArrow } from './CarouselNextArrow'
-import { CarouselPrevArrow } from './CarouselPrevArrow'
+import { CarouselNextArrow } from '../../components/CarouselNextArrow'
+import { CarouselPrevArrow } from '../../components/CarouselPrevArrow'
 interface IProjects {
     image: StaticImageData,
     name: string
