@@ -18,7 +18,7 @@ export default function ContactPage() {
           </div>
         </BannerPage>
       </section>
-      <section className="py-[60px]">
+      <section className="pb-[30px]">
         <ContactForm />
       </section>
     </main>
