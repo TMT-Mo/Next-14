@@ -17,7 +17,10 @@ export const BannerPage = ({ src, mobileSrc, children }: IProps) => {
         )}
         <Image alt="" src={src} layout="responsive" />
       </picture>
-      <div className="absolute top-1/2  transform -translate-x-1/2 -translate-y-2/3 left-1/2">
+      {/* Overlay for mobile devices */}
+      <div className="absolute inset-0 bg-black opacity-50 md:opacity-0"></div>{" "}
+      {/* Dark overlay */}
+      <div className="absolute top-1/2 transform -translate-x-1/2 -translate-y-2/3 left-1/2 z-10">
         {children}
       </div>
       <div className="h-[13px] bg-secondary"></div>
