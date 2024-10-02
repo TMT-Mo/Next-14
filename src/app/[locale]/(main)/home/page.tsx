@@ -1,10 +1,11 @@
 import React from 'react'
-import { Banner } from './Banner'
-import { CarbonCredit } from './CarbonCredit'
-import { CarbonProject } from './CarbonProject'
+import { Banner } from './sections/Banner/index'
+import { CarbonCredit } from './sections/CarbonCredit/index'
+import { CarbonProject } from './sections/CarbonProject/index'
 import { getTranslations } from 'next-intl/server'
-import { GenerationFlow } from './GenerationFlow'
-import { VietNamData } from './VietNamData'
+import { GenerationFlow } from './sections/GenerationFlow/index'
+import { VietNamData } from './sections/VietNamData/index'
+
 
 export async function generateMetadata({
     params: { locale },

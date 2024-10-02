@@ -11,12 +11,12 @@ import EnvironmentImg from './images/environment.png'
 import GreenImg from './images/green.png'
 import RegulationImg from './images/regulation.png'
 import TaxImg from './images/tax.png'
-import styles from './style.module.scss'
+import styles from '../../style.module.scss'
 import styled from 'styled-components'
 import { CarouselRef } from 'antd/es/carousel'
 import useDeviceDetection from '@/hooks/useDeviceDetection'
-import { CarouselNextArrow } from './components/CarouselNextArrow'
-import { CarouselPrevArrow } from './components/CarouselPrevArrow'
+import { CarouselNextArrow } from './CarouselNextArrow'
+import { CarouselPrevArrow } from './CarouselPrevArrow'
 interface IProjects {
     image: StaticImageData,
     name: string

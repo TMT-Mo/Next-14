@@ -5,6 +5,7 @@ import GenerationFlowImg from '@/assets/generationFlow.png'
 import GenerationFlowMobileImg from './images/generation_flow_mobile.png'
 import Image from 'next/image'
 import useDeviceDetection from '@/hooks/useDeviceDetection'
+
 export const GenerationFlow = () => {
     const { isMobile } = useDeviceDetection()
     return (

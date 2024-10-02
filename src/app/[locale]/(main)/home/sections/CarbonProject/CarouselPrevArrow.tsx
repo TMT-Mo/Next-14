@@ -1,6 +1,6 @@
 
 import Image from 'next/image'
-import LeftArrow from '../images/left_arrow_circle.png'
+import LeftArrow from './images/left_arrow_circle.png'
 import { CarouselRef } from 'antd/es/carousel'
 interface IProps {
     carouselRef: React.RefObject<CarouselRef>

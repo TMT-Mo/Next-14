@@ -6,7 +6,7 @@ import DataDotBg from "./images/DataDotBg.png";
 import { Flex } from "antd";
 // import styled from 'styled-components'
 import Data1 from "./images/data1.png";
-import { IVietNamData } from "./types";
+import { IVietNamData } from "../../types";
 import Logo from "@/assets/bcg_logo.png";
 import { GoArrowRight } from "react-icons/go";
 import { LeafTitle } from "@/components/LeafTitle";
@@ -20,30 +20,11 @@ import AmericanBrand from "./images/amerian-carbon.png";
 import CBrand from "./images/c-brand.png";
 import ClimateBrand from "./images/climate.png";
 import VerifiedCarbonBrand from "./images/verified-carbon.png";
-import Carousel, { ArrowProps } from "react-multi-carousel";
+import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import LeftArrow from "./images/left_arrow_circle.png";
-import RightArrow from "./images/right_arrow_circle.png";
 import useDeviceDetection from "@/hooks/useDeviceDetection";
 import DotBgMobile from "./images/Dot_bg_mobile.png";
-// const StyledCarousel = styled(Carousel)`
-//     .slick-prev{
-//         left: 78%;
-//         width: 67px;
-//         height: auto;
-//         opacity: 100%;
-//         top: -15%;
-//     }
-
-//     .slick-next{
-//         right: 13%;
-//         width: 67px;
-//         height: auto;
-//         opacity: 100%;
-//         top: -15%;
-//     }
-// `
-
+import { CustomArrow } from "./CustomArrow";
 const vietnamDataList: IVietNamData[] = [
     {
         image: Data1,
@@ -67,33 +48,6 @@ const vietnamDataList: IVietNamData[] = [
             "Vu Trung Kien, director of the Centre for Climate Change Response Support, speaks to Nhan Dan (People) newspaper about...",
     },
 ];
-
-interface ICustomArrow extends ArrowProps {
-    direction: "left" | "right";
-    width: number;
-    height: number;
-}
-
-const CustomArrow: React.FC<ICustomArrow> = ({
-    onClick,
-    direction,
-    height,
-    width,
-}) => {
-    return (
-        <Image
-            alt="left-arrow"
-            src={direction == "right" ? RightArrow : LeftArrow}
-            onClick={onClick}
-            style={{
-                width,
-                height,
-                cursor: "pointer",
-            }}
-        />
-    );
-};
-
 export const VietNamData = () => {
     const carouselRef = useRef<Carousel>(null);
     const { isMobile } = useDeviceDetection();
