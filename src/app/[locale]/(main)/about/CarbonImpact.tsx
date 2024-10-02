@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import CarbonImpactImg from "./image/global-impact.png";
 import CarbonContent from "./image/carbon-content.png";
+import MobileBackground from "./image/about-mobile-bg.png";
 
 export const CarbonImpact = () => {
   return (
@@ -49,7 +50,56 @@ export const CarbonImpact = () => {
         </Col>
         <Col xs={1} sm={2} md={2} lg={2}></Col>
       </Row>
-      <div className="relative bg-[#EDEDED] h-[980px]">
+
+      {/* New Layout for Mobile */}
+      <div className="relative bg-[#EDEDED] md:hidden pb-20">
+        {/* Hidden on desktop */}
+        {/* Image in the background */}
+        <div className="absolute inset-0 z-0 top-[-20px]">
+          <Image src={MobileBackground} alt="Background Image" />
+        </div>
+
+        {/* Green rectangle on top */}
+        <div className="absolute top-[-50px] left-0 right-0 z-20 mx-auto w-[200px] h-[70px] bg-[#5BA43B]"></div>
+
+        <div className="relative z-10 ">
+          {/* White background above the green section */}
+          <div className="bg-white h-[20px] mx-[25px] "></div>
+
+          {/* Green section */}
+          <div className="bg-[#6DBB4A] text-white text-center font-bold py-4 px-6 mx-[25px]">
+            <p>
+              We are a globally recognized carbon project developer dedicated to
+              improving the lives of vulnerable communities worldwide.
+            </p>
+          </div>
+
+          {/* White section */}
+          <div className="bg-white text-black text-center py-4 px-6 h-auto mx-[25px]">
+            <p className="pt-[50px] pb-5">
+              Since 2008, we've been scaling carbon reduction and clean energy
+              initiatives, producing high-quality carbon credits with meaningful
+              benefits for the world's poorest populations.
+            </p>
+            <p className="py-5">
+              Our focus is on driving a sustained transition to climate
+              resilience, particularly for those whose health and livelihoods
+              are most threatened by climate change. Through carbon finance, we
+              aim to enable a long-term shift toward sustainable solutions.
+            </p>
+            <p className="pt-5 pb-[100px]">
+              Our projects are designed to create lasting change for the planet,
+              its people, and their prosperity by transforming lives, behaviors,
+              and technologies.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Layout */}
+      <div className="relative bg-[#EDEDED] h-[980px] hidden md:block">
+        {" "}
+        {/* Hidden on mobile */}
         <Image alt="" src={CarbonContent} className="-translate-y-80" />
       </div>
     </>
