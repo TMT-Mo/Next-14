@@ -1,22 +1,26 @@
-import { BannerPage } from '@/components/BannerPage'
-import React from 'react'
-import Banner from '@/assets/contact_carousel.png'
-import { ContactForm } from './ContactForm'
+import { BannerPage } from "@/components/BannerPage";
+import React from "react";
+import BannerDesktop from "./image/contact_carousel.png"; // Desktop image
+import BannerMobile from "./image/contact_carousel_mobile.png";
+import { ContactForm } from "./ContactForm";
 export default function ContactPage() {
   return (
     <main>
       <section>
-        <BannerPage src={Banner}>
-          <div className='flex flex-col items-center text-white text-center gap-10'>
-            <span className='uppercase text-[21px]'>contact us</span>
-            <h1 className='text-white text-[73px] font-bold text-center leading-[80px] whitespace-nowrap'>We Want To Hear From You</h1>
+        <BannerPage src={BannerDesktop} mobileSrc={BannerMobile}>
+          <div className="text-white w-[320px] md:w-[1250px] flex flex-col items-center text-center md:min-h-0  gap-6 md:gap-10 md:p-0 md:items-center md:text-center">
+            <span className="uppercase text-[16px] md:text-[21px]">
+              contact us
+            </span>
+            <h1 className="text-white max-width text-[32px] md:text-[73px] font-bold leading-tight md:leading-[80px]p">
+              We Want To Hear From You
+            </h1>
           </div>
         </BannerPage>
-
       </section>
-      <section className='py-[120px]'>
+      <section className="py-[60px]">
         <ContactForm />
       </section>
     </main>
-  )
+  );
 }

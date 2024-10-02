@@ -1,18 +1,29 @@
-import React from 'react'
-import Image, { StaticImageData } from 'next/image'
+import React from "react";
+import Image from "next/image";
+import { StaticImageData } from "next/image";
+
 interface IProps {
-    children?: React.ReactNode
-    src: StaticImageData
+  children?: React.ReactNode;
+  src: StaticImageData;
+  mobileSrc?: StaticImageData; // Optional prop for mobile image
 }
 
-export const BannerPage = ({ src, children }: IProps) => {
-    return (
-        <div className='relative'>
-            <Image alt='' src={src} />
-            <div className='absolute top-1/2  transform -translate-x-1/2 -translate-y-2/3 left-1/2'>
-                {children}
-            </div>
-            <div className='h-[13px] bg-secondary' ></div>
-        </div>
-    )
-}
+export const BannerPage = ({ src, mobileSrc, children }: IProps) => {
+  return (
+    <div className="relative">
+      <picture>
+        {mobileSrc && (
+          <source media="(max-width: 767px)" srcSet={mobileSrc.src} />
+        )}
+        <Image alt="" src={src} layout="responsive" />
+      </picture>
+      {/* Overlay for mobile devices */}
+      <div className="absolute inset-0 bg-black opacity-50 md:opacity-0"></div>{" "}
+      {/* Dark overlay */}
+      <div className="absolute top-1/2 transform -translate-x-1/2 -translate-y-2/3 left-1/2 z-10">
+        {children}
+      </div>
+      <div className="h-[13px] bg-secondary"></div>
+    </div>
+  );
+};

@@ -24,20 +24,22 @@ export const ContactForm = () => {
                     <div className=' relative bg-heavy-green top-0 -translate-y-80'>
                         <div className='bg-secondary w-5 h-5 absolute right-1/2 translate-x-1/2 -top-[13px] xl:-top-[26px] xl:-translate-x-6 xl:w-[53px] xl:h-[53px] xl:left-0' ></div>
 
-                        <div className='flex flex-col  text-white text-center px-14 pt-8  gap-4 pb-8 xl:pb-64 xl:px-28 xl:pt-20 xl:gap-[50px] xl:text-start'>
-                            <span className='text-2xl font-bold'>Info</span>
-                            <div className='flex flex-col gap-10 xl:gap-16 '>
-                                <div className='flex flex-col items-center gap-4 xl:flex-row xl'>
+                        <div className="flex flex-col  text-white text-center px-14 pt-8  gap-4 pb-8 xl:pb-64 xl:px-28 xl:pt-20 xl:gap-[50px] xl:text-start">
+                            <span className="text-2xl font-bold">Info</span>
+                            <div className="flex flex-col gap-10 xl:gap-16 ">
+                                <div className="flex flex-col items-center gap-4 xl:flex-row xl">
                                     <MailBox />
                                     <span>info@bcgeco.com</span>
                                 </div>
-                                <div className='flex flex-col items-center gap-4 xl:flex-row xl'>
+                                <div className="flex flex-col items-center gap-4 xl:flex-row xl">
                                     <PhoneIcon />
                                     <span>(84-26) 3 852 815</span>
                                 </div>
-                                <div className='flex flex-col items-center gap-4 w-64 xl:flex-row xl'>
+                                <div className="flex flex-col items-center gap-4 w-64 xl:flex-row xl">
                                     <LocationMark />
-                                    <span>56 Ha Huy Tap Street,Nam Dinh City, Nam Dinh, 754000 Vietnam</span>
+                                    <span>
+                                        56 Ha Huy Tap Street,Nam Dinh City, Nam Dinh, 754000 Vietnam
+                                    </span>
                                 </div>
                             </div>
                         </div>
