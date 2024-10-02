@@ -26,7 +26,11 @@ export const HeaderDrawer = () => {
     return (
         <div className='block lg:hidden'>
             <Image src={HamburgerIcon} alt='' className='!w-9 h-9' onClick={openDrawer} />
-            <Drawer width={'90vw'} headerStyle={{ display: 'none' }} className='!bg-primary' title="Basic Drawer" onClose={closeDrawer} open={isOpenDrawer}>
+            <Drawer width={'90vw'} styles={{
+                header: {
+                    display: 'none'
+                }
+            }} className='!bg-primary' title="Basic Drawer" onClose={closeDrawer} open={isOpenDrawer}>
                 <div className='container flex flex-col gap-10 '>
                     <div className='flex justify-end'>
                         <Image src={CloseIcon} alt='' className='!w-9 h-9' onClick={closeDrawer} />

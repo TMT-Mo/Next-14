@@ -11,7 +11,10 @@ import DoubleArrow from '@/icons/DoubleArrow.svg?icon'
 import MailBox from '@/icons/email.svg?icon'
 import PhoneIcon from '@/icons/phone_white.svg?icon'
 import LocationMark from '@/icons/location_mark.svg?icon'
+import useDeviceDetection from '@/hooks/useDeviceDetection'
+
 export const ContactForm = () => {
+    const { isDesktop } = useDeviceDetection()
     return (
         <div className='container mx-auto '>
             <div className='relative w-full flex flex-col-reverse xl:drop-shadow-2xl xl:w-fit xl:flex-row xl:mx-auto'>
@@ -42,12 +45,13 @@ export const ContactForm = () => {
                         <div className='absolute bg-secondary bottom-0 left-1/2 -translate-x-1/2 translate-y-3 h-6 w-60' ></div>
                     </div>
                 </div>
-                <div className='flex flex-col bg-white  pt-44 pb-8 px-4 xl:pl-28 xl:pr-64 xl:h-full xl:pt-16'>
+                <div className='flex flex-col bg-white items-center pt-44 pb-8 px-4 xl:pl-28 xl:pr-64 xl:h-full xl:pt-16 '>
                     <Image alt='logo' src={Logo} className='hidden xl:block' />
                     <LeafTitle className='text-4xl mb-12 mt-16 hidden xl:block'>Contact Us</LeafTitle>
                     <Form
                         layout="vertical"
-                        style={{ maxWidth: 452, width: 'inherit' }}
+                        style={{ width: isDesktop ? 452 : '-webkit-fill-available' }}
+
                     // className='w-screen '
                     >
                         <Form.Item label={<span className='text-[16px] text-black'>Name</span>}>

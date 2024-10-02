@@ -4,6 +4,6 @@ import React from 'react'
 export default function ResourcesPage() {
     const t = useTranslations("HomePage")
     return (
-        <div>{t("about")}</div>
+        <div className='!h-screen'>{t("about")}</div>
     )
 }
